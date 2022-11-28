@@ -1,0 +1,30 @@
+*{
+  font-family: 'Spinnaker', sans-serif;
+}
+
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: #FFFFFF;
+}
+
+h1, h2, h3, h4, p, span{
+  color: #4b4947;
+}
+
+button, input{
+  outline: none;
+}
+
+a{
+  outline: none;
+}
+
+a:hover{
+  cursor: pointer;
+}
+
+button:hover{
+  cursor:pointer
+}
