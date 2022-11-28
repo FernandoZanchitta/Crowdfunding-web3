@@ -8,3 +8,18 @@ install _node.js_ by downloading directly from this link https://nodejs.org/en/d
 npm install -g truffle
 truffle compile
 ```
+
+## Front
+
+### Setup
+```
+cd frontend/
+npm install
+```
+
+### Rodar
+
+```
+cd frontend/
+npm start
+```
