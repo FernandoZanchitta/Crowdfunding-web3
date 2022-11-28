@@ -57,7 +57,7 @@ contract Campaign{
         ){
             title = campaignTitle;
             requiredAmount = requiredCampaignAmount;
-            image = imgURI;
+            image = URI;
             story = storyURI;
             owner = payable(msg.sender);
     }
