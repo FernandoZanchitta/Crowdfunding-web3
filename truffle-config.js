@@ -1,5 +1,6 @@
 require('dotenv').config()
 const HDWalletProvider = require('@truffle/hdwallet-provider');
+contracts_directory: './contracts'
 /**
  * Use this file to configure your truffle project. It's seeded with some
  * common settings for different networks and features like migrations,
@@ -66,11 +67,11 @@ module.exports = {
     // tab if you use this network and you must also set the `host`, `port` and `network_id`
     // options below to some value.
     //
-    // development: {
-    //  host: "127.0.0.1",     // Localhost (default: none)
-    //  port: 8545,            // Standard Ethereum port (default: none)
-    //  network_id: "*",       // Any network (default: none)
-    // },
+    development: {
+     host: "127.0.0.1",     // Localhost (default: none)
+     port: 8545,            // Standard Ethereum port (default: none)
+     network_id: "*",       // Any network (default: none)
+    },
     //
     // An additional network, but with some advanced options…
     // advanced: {
@@ -90,10 +91,11 @@ module.exports = {
         providerOrUrl: process.env.INFURA_API_URL,
         numberOfAddresses: 1
       }),
-      network_id: 4,    
+      network_id: 11155111,    
       gas: 5500000, 
       confirmations: 2,
-      timeoutBlocks: 200,
+      networkCheckTimeout: 10000000,
+      timeoutBlocks: 50,
       skipDryRun: true,
     },
     // goerli: {

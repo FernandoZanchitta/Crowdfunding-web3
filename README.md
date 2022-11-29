@@ -23,3 +23,18 @@ npm install
 cd frontend/
 npm start
 ```
+
+### Testar a Blockchain:
+
+```
+truffle compile
+truffle migrate
+truffe console
+```
+Tenha o ganache aberto e conectado com sua metamask. Dentro do console podemos fazer:
+```
+let instance = await CampaignFactory.deployed()
+instance
+instance.createCampaign("CampanhaTeste",20,"ImgURL","Category","Story")
+instance.deployedCampaigns(0)
+```
