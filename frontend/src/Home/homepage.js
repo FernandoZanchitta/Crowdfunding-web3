@@ -1,20 +1,14 @@
 import {React} from 'react'
-import Logo from '../assets/logo.jpg'
 import Banner from '../assets/banner.png'
 import Zank from '../assets/zank.jpg'
 import Davi from '../assets/davi.jpg'
+import Header from '../header/index'
 
 export default function Home(){
-
+    
     return(
         <div style={{display: "flex", flexDirection: "column", marginBottom: "100px"}}>
-            <div style={{display: "flex", flexDirection: "row", justifyContent: "space-between", alignItems: "center", paddingLeft: "20px", paddingRight: "20px"}}>
-                <div style={{backgroundColor: "#fff", paddingLeft: "40px", paddingRight: "40px", display: "flex", flexDirection: "row", height: "100px", justifyContent: "start", alignItems: "center"}}>
-                    <img src={Logo} style={{width: "50px"}}/>
-                    <a style={{marginLeft: "100px", textDecoration: "none", color: "#4b4947", fontSize: "30px", fontFamily: "sans-serif"}} href="/">CROWDFUNDITA</a>
-                </div>
-                <a style={{marginRight: "200px", textDecoration: "none", color: "black"}} href="/projects">ACESSAR PROJETOS</a>
-            </div>
+            <Header />
             <img src={Banner} style={{maxWidth: "2000px", width: "100%", height: "500px", objectFit: "cover"}}/>
             <div style={{display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", marginTop: "50px"}}>
                 <h2>NOSSA MISSÃO</h2>
