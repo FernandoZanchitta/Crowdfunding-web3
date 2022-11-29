@@ -1,8 +1,11 @@
 import {React} from 'react'
+import { useState } from 'react'
 import Logo from '../assets/logo.jpg'
 import Web3 from 'web3'
 export default function Project(){
+    const [error,setError] = useState('');
     const connectWalletHandler = async () => {
+        
         let web3;
         console.log('connect wallet');
     if( typeof window !== 'undefined' && typeof window.ethereum !== 'undefined'){
@@ -12,7 +15,7 @@ export default function Project(){
             web3 = new Web3(window.ethereum);
 
         } catch(err){
-            console.log(err.message);
+            setError(err.message);
         }
     } else{
         //metamask is not installed
@@ -30,6 +33,11 @@ export default function Project(){
             </div>
             <section style={{marginTop: "50px", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", alignSelf: "center", textAlign: "center", border: "1px solid", maxWidth: "900px", paddingTop: "20px", paddingBottom: "50px", borderRadius: "50px", width: "100%"}}>
             <button onClick={connectWalletHandler} style={{width: "150px", alignSelf:"center", backgroundColor: "#00f500", border: "none", height: "40px", fontSize: "13px", borderRadius: "10px"}}>Conectar Carteira</button>
+            <section>
+                <div >
+                    <p>{error}</p>
+                </div>
+            </section>
                 <h2>Empresa Start + Sugoucoin</h2>
                 <p style={{lineHeight: "30px", marginBottom: "50px", maxWidth: "500px", textAlign: "center", alignSelf: "center"}}>Fusão de duas empresas. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
                 <button style={{width: "150px", alignSelf:"center", backgroundColor: "#e8ab05", border: "none", height: "40px", fontSize: "13px", borderRadius: "10px"}}>Doar</button>

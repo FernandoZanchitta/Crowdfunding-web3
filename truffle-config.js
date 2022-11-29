@@ -1,3 +1,5 @@
+require('dotenv').config()
+const HDWalletProvider = require('@truffle/hdwallet-provider');
 /**
  * Use this file to configure your truffle project. It's seeded with some
  * common settings for different networks and features like migrations,
@@ -64,11 +66,11 @@ module.exports = {
     // tab if you use this network and you must also set the `host`, `port` and `network_id`
     // options below to some value.
     //
-    development: {
-     host: "127.0.0.1",     // Localhost (default: none)
-     port: 8545,            // Standard Ethereum port (default: none)
-     network_id: "*",       // Any network (default: none)
-    },
+    // development: {
+    //  host: "127.0.0.1",     // Localhost (default: none)
+    //  port: 8545,            // Standard Ethereum port (default: none)
+    //  network_id: "*",       // Any network (default: none)
+    // },
     //
     // An additional network, but with some advanced options…
     // advanced: {
@@ -82,6 +84,18 @@ module.exports = {
     //
     // Useful for deploying to a public network.
     // Note: It's important to wrap the provider as a function to ensure truffle uses a new provider every time.
+    sepolia: {
+      provider: () => new HDWalletProvider({
+        privateKeys: [process.env.PRIVATE_KEY_1],
+        providerOrUrl: process.env.INFURA_API_URL,
+        numberOfAddresses: 1
+      }),
+      network_id: 4,    
+      gas: 5500000, 
+      confirmations: 2,
+      timeoutBlocks: 200,
+      skipDryRun: true,
+    },
     // goerli: {
     //   provider: () => new HDWalletProvider(MNEMONIC, `https://goerli.infura.io/v3/${PROJECT_ID}`),
     //   network_id: 5,       // Goerli's id
@@ -106,7 +120,7 @@ module.exports = {
   // Configure your compilers
   compilers: {
     solc: {
-      version: "0.8.17" // Fetch exact version from solc-bin (default: truffle's version)
+      version: "0.8.11" // Fetch exact version from solc-bin (default: truffle's version)
       // docker: true,        // Use "0.5.1" you've installed locally with docker (default: false)
       // settings: {          // See the solidity docs for advice about optimization and evmVersion
       //  optimizer: {
