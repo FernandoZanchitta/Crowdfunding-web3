@@ -27,6 +27,7 @@ npm start
 ### Testar a Blockchain:
 
 ```
+npm install dotenv @truffle/hdwallet-provider
 truffle compile
 truffle migrate
 truffe console
